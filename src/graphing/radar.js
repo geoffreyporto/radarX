@@ -427,7 +427,7 @@ const Radar = function (size, radar) {
       .html('Powered by <a href="https://www.banregio.com"> Banregio</a>. '
       + 'Al utilizar este servicio, acepta <a href="https://info.banregio.com/visualize-your-tech-strategy-terms-of-service.html"> terminos de uso de Banregio</a>. '
       + 'Usted también acepta nuestro <a href="https://www.banregio.com/privacy-policy">política de privacidad</a>, lo cuál describe cómo recopilaremos, utilizaremos y protegeremos cualquier dato personal contenido en su Hoja de Google pública. '
-      + 'Este software es <a href="https://github.com/geoffreyporto/radartec">open source</a> Y disponible para la transferencia directa y el auto-hospedaje');
+      + 'Este software es <a href="https://github.com/geoffreyporto/radarX">open source</a> Y disponible para la transferencia directa y el auto-hospedaje');
   }
 
   function mouseoverQuadrant(order) {

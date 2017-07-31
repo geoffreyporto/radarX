@@ -1,66 +1,67 @@
-[![Build Status](https://snap-ci.com/thoughtworks/build-your-own-radar/branch/master/build_image)](https://snap-ci.com/thoughtworks/build-your-own-radar/branch/master)
+[![Build Status](https://github.com/geoffreyporto/radarX.git)](https://github.com/geoffreyporto/radarX.git)
 
-A library of Banregio that generates an interactive radar, inspired by [thoughtworks.com/radar](http://thoughtworks.com/radar).
+Esta herramienta de RadarX que genera un radar interactivo, fue inspirado en [thoughtworks.com](http://thoughtworks.com).
 
 ## Demo
 
-You can see this in action at https://radar.thoughtworks.com. If you plug in [this data](https://docs.google.com/spreadsheets/d/1YXkrgV7Y6zShiPeyw4Y5_19QOfu5I6CyH5sGnbkEyiI/) you'll see [this visualization](https://radar.thoughtworks.com/?sheetId=1YXkrgV7Y6zShiPeyw4Y5_19QOfu5I6CyH5sGnbkEyiI). 
+Tu puedes ver una demo en https://radar.thoughtworks.com. If you plug in [this data](https://docs.google.com/spreadsheets/d/1KfCVUYXI3EnSNVveWI40B7-oOZJofeoh5PWzxRqDP1U/edit#gid=0) you'll see [this visualization](https://radar.thoughtworks.com/?sheetId=1YXkrgV7Y6zShiPeyw4Y5_19QOfu5I6CyH5sGnbkEyiI).
 
-## How To Use
+## Cómo usar esto
 
 The easiest way to use the app out of the box is to provide a *public* Google Sheet ID from which all the data will be fetched. You can enter that ID into the input field on the first page of the application, and your radar will be generated. The data must conform to the format below for the radar to be generated correctly.
+La forma más fácil de usar la aplicación fuera de la caja es proporcionar una ID de hoja de Google *pública* de la que se obtendrán todos los datos. Puede introducir ese ID en el campo de entrada en la primera página de la aplicación, y su radar se generará. Los datos deben ajustarse al formato siguiente para que el radar se genere correctamente.
 
-### Setting up your data
+### Configuración de sus datos
 
-You need to make your data public in a form we can digest.
+Tu necesitas hacer que sus datos públicos en una forma que podemos entender.
 
-Create a Google Sheet. Give it at least the below column headers, and put in the content that you want:
+Crear una Hoja de Google. Déle por lo menos los encabezados de columna a continuación, y poner en el contenido que desea:
 
 | name          | ring   | quadrant               | isNew | description                                             |
 |---------------|--------|------------------------|-------|---------------------------------------------------------|
-| Composer      | adopt  | tools                  | TRUE  | Although the idea of dependency management ...          |
-| Canary builds | trial  | techniques             | FALSE | Many projects have external code dependencies ...       |
-| Apache Kylin  | assess | platforms              | TRUE  | Apache Kylin is an open source analytics solution ...   |
-| JSF           | hold   | languages & frameworks | FALSE | We continue to see teams run into trouble using JSF ... |
+| Composer      | adoptar  | herramientas, librerias & APIS | TRUE  | Gestión de la dependencia de pqauqtes ...          |
+| Canary builds | probar  | técnicas, buenas prácticas & estándares | FALSE | Muchos proyectos tienen dependencias de código externas ...       |
+| Apache Kylin  | evaluar | plataformas & arquitecturas TI | TRUE  | Apache Kylin es una solución de analítica open source...   |
+| JSF           | mirar   | lenguajes & frameworks | FALSE | Seguimos viendo que los equipos tienen problemas con JSF ... |
 
-### Sharing the sheet
+### Compartir la hoja
 
-* In Google sheets, go to 'File', choose 'Publish to the web...' and then click 'Publish'.
-* Close the 'Publish to the web' dialog.
-* Copy the URL of your editable sheet from the browser (Don't worry, this does not share the editable version). 
+* En las hojas de Google, vaya a "Archivo", elija "Publicar en la web ..." y, a continuación, haga clic en "Publicar".
+* Cierre el cuadro de diálogo "Publicar en la web".
+* Copia la URL de tu hoja editable desde el navegador (No te preocupes, esto no comparte la versión editable).
 
-The URL will be similar to [https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit](https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit). In theory we are only interested in the part between '/d/' and '/edit' but you can use the whole URL if you want.
+La URL será similar a [https://docs.google.com/spreadsheets/d/1KfCVUYXI3EnSNVveWI40B7-oOZJofeoh5PWzxRqDP1U/edit#gid=0](https://docs.google.com/spreadsheets/d/1KfCVUYXI3EnSNVveWI40B7-oOZJofeoh5PWzxRqDP1U/edit#gid=0). En teoría sólo estamos interesados en la parte entre '/d /'y '/edit', pero puede usar toda la URL si lo desea.
 
-### Building the radar
+### Construyendo el RadarX
 
-Paste the URL in the input field on the home page.
+Pegue la URL en el campo de entrada de la página de inicio.
 
-That's it!
+¡Eso es!
 
-Note: the quadrants of the radar, and the order of the rings inside the radar will be drawn in the order they appear in your Google Sheet.
+Nota: los cuadrantes del radar y el orden de los anillos dentro del radar se presentará en el orden en que aparecen en su Hoja de Google.
 
 ### More complex usage
 
-To create the data representation, you can use the Google Sheet [factory](/src/util/factory.js), or you can also insert all your data straight into the code.
+Para crear la representación de datos, puede utilizar Google Sheet [factory](/src/util/factory.js), o también puede insertar todos sus datos directamente en el código.
 
-The app uses [Tabletop.js](https://github.com/jsoma/tabletop) to fetch the data from a Google Sheet, so refer to their documentation for more advanced interaction.  The input from the Google Sheet is sanitized by whitelisting HTML tags with [sanitize-html](https://github.com/punkave/sanitize-html).
+La app utiliza [Tabletop.js](https://github.com/jsoma/tabletop) Para obtener los datos de una Hoja de Google, por lo que consulte su documentación para obtener una interacción más avanzada. La entrada de la Hoja de Google se utiliza mediante la inclusión en blanco de etiquetas HTML con [sanitize-html](https://github.com/punkave/sanitize-html).
 
-The application uses [webpack](https://webpack.github.io/) to package dependencies and minify all .js and .scss files.
+La aplicación utiliza [webpack](https://webpack.github.io/) Para empaquetar dependencias y minificar todos los archivos .js y .scss.
 
-## Contribute
+## Contribuya
 
-All tasks are defined in `package.json`.
+Todas las tareas se definen en `package.json`.
 
-Pull requests are welcome; please write tests whenever possible. 
-Make sure you have nodejs installed.
+Las peticiones de tracción son bienvenidas; Por favor escriba las pruebas siempre que sea posible.
+Asegúrese de tener instalado nodejs.
 
-- `git clone git@github.com:thoughtworks/build-your-own-radar.git`
+- 'git clone https://github.com/geoffreyporto/radarX.git`
 - `npm install`
-- `npm test` - to run your tests
-- `npm run dev` - to run application in localhost:8080. This will watch the .js and .css files and rebuild on file changes
+- `npm test` - para ejecutar sus pruebas
+- `npm run dev` - para ejecutar la aplicación en localhost:8080. Esto verá los archivos .js y .css y reconstruirá los cambios de archivo
 
-### Don't want to install node? Run with one line docker
+### ¿No desea instalar el nodejs? Ejecuta con un simple comando de Docker
 
      $ docker run -p 8080:8080 -v $PWD:/app -w /app -it node:7.3.0 /bin/sh -c 'npm install && npm run dev'
 
-After building it will start on localhost:8080
+Después de la construcción comenzará en localhost:8080
