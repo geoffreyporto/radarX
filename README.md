@@ -8,7 +8,6 @@ Tu puedes ver una demo en https://radar.thoughtworks.com. If you plug in [this d
 
 ## Cómo usar esto
 
-The easiest way to use the app out of the box is to provide a *public* Google Sheet ID from which all the data will be fetched. You can enter that ID into the input field on the first page of the application, and your radar will be generated. The data must conform to the format below for the radar to be generated correctly.
 La forma más fácil de usar la aplicación fuera de la caja es proporcionar una ID de hoja de Google *pública* de la que se obtendrán todos los datos. Puede introducir ese ID en el campo de entrada en la primera página de la aplicación, y su radar se generará. Los datos deben ajustarse al formato siguiente para que el radar se genere correctamente.
 
 ### Configuración de sus datos
@@ -40,7 +39,7 @@ Pegue la URL en el campo de entrada de la página de inicio.
 
 Nota: los cuadrantes del radar y el orden de los anillos dentro del radar se presentará en el orden en que aparecen en su Hoja de Google.
 
-### More complex usage
+### Uso más complejo
 
 Para crear la representación de datos, puede utilizar Google Sheet [factory](/src/util/factory.js), o también puede insertar todos sus datos directamente en el código.
 
